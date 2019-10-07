@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/*no sass as variaveis iniciam com $*/
+/*importando cores e fontes*/
+@font-face {
+  font-family: "decorativa";
+  src: url(../fonts/WorkSans-Regular.ttf);
+}
+@font-face {
+  font-family: "padrao";
+  src: url(../fonts/Lobster-Regular.ttf);
+}
+body {
+  margin: 0;
+}
+
+#header {
+  background-color: #f1a9a0;
+  padding: 10px 20px;
+}
+#header * {
+  display: inline;
+  vertical-align: middle;
+}
+#header img {
+  width: 70px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+#header h1 {
+  font-family: "decorativa";
+}
+
+#formularioContato {
+  padding: 10px;
+  border: 1px solid #f1a9a0;
+  /* ajuste a largura a seu gosto */
+  width: 100%;
+  margin: auto;
+}
+#formularioContato label, #formularioContato input {
+  display: block;
+  font-family: "decorativa";
+}
+#formularioContato input {
+  margin-bottom: 10px;
+}
+#formularioContato input[type=text], #formularioContato input[type=tell], #formularioContato input[type=email], #formularioContato input[type=sumit], #formularioContato input[type=date] {
+  /*& concatena o input com o input type-text.. esse & estiliza apenas o input que vc esta associando a ele*/
+  height: 20;
+  font-size: 100%;
+  /*daqui pra baixo é opcional*/
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding-left: 5px;
+}
+#formularioContato input[type=text] {
+  width: 300px;
+}
+#formularioContato input[type=tel] {
+  width: 300px;
+}
+#formularioContato input[type=email] {
+  width: 200px;
+}
+#formularioContato input[type=submit] {
+  padding: 10px 20px;
+  height: inherit;
+  /*anula a altura padrão do botão*/
+  background-color: #ff9478;
+  color: black;
+}
+
+/*# sourceMappingURL=estilos.css.map */

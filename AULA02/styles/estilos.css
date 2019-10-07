@@ -1,0 +1,35 @@
+.leituraDados {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.leituraDados * {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  font-size: 110%;
+  height: 15px;
+  border-radius: 5px;
+  border: 1px solid #bbbbbb;
+  padding: 3px;
+}
+
+button {
+  font-size: 100%;
+  background-color: #fc1374;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#mensagem {
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  background-color: #eeadcb;
+  font-weight: bold;
+  padding: 5 px;
+  width: 30%;
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=estilos.css.map */

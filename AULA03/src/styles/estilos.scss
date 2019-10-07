@@ -1,0 +1,83 @@
+
+@import"cores"; /*importando cores e fontes*/
+@import"fontes";
+
+
+body{
+    margin: 0;
+}
+
+#header{
+    background-color: $cor-header;
+    padding: 10px 20px;
+
+    *{
+        display: inline;
+        vertical-align: middle;
+    }
+
+    img{
+        width: 70px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+
+    h1{
+        font-family: $fonte-decorativa;
+        
+        
+    }
+
+
+}
+
+
+
+
+
+#formularioContato{
+
+    padding: 10px;
+    border: 1px solid $cor-header;
+    /* ajuste a largura a seu gosto */
+    width: 100%; 
+    margin: auto; 
+
+    label, input{
+        display: block;
+        font-family: $fonte-decorativa;
+    }
+    input{
+        margin-bottom: 10px;
+
+            &[type=text], &[type=tell], &[type=email], &[type=sumit], &[type=date]{ /*& concatena o input com o input type-text.. esse & estiliza apenas o input que vc esta associando a ele*/
+                height:20;
+                font-size: 100%;
+                /*daqui pra baixo é opcional*/
+                border-radius: 5px;
+                border: 1px solid #aaa;
+                padding-left: 5px;
+            }
+            &[type=text]{
+                width: 300px;
+            }
+            &[type=tel]{
+                width: 300px;
+            }
+            &[type=email]{
+                width: 200px;
+            }
+            &[type=submit]{
+                padding: 10px 20px;
+                height: inherit; /*anula a altura padrão do botão*/
+                background-color: $cor-botao-primario;
+                color: black;
+
+
+
+            }
+
+}
+
+
+}
