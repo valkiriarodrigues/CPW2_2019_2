@@ -37,7 +37,7 @@ function renderizarTabelaContatos(){
          /**
           * limpa a area de listagem
           */
-         areaListagemContatos.innerHTML='';
+         areaListagemContatos.innerHTML=''; //recebe uma string vazia
 
          /**
           * cria o cabeçalho da tabela
