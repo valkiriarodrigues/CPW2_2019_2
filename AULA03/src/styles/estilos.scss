@@ -81,3 +81,24 @@ body{
 
 
 }
+
+#listagemContatos{
+    margin-top: 20px;
+    width: 95%;
+
+    table{
+        border-collapse: collapse;
+        //border: 1px solid black;
+        margin: auto;
+        width: 95%;
+        font-family: $fonte-decorativa;
+
+        thead{
+
+            background-color: $cor-header;
+        
+        }
+
+
+    }
+}

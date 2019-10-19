@@ -1,7 +1,15 @@
 /**
  * nosso banco de dados fake(in memory DB)
  */
-var contatos = [];
+var contatos = [
+    {
+        nome: 'Valkiria',
+        telefone: '999999999',
+        email:'valkiria@hotmail.com',
+        dataNascimento:'10/12/1994'
+    }
+];
+renderizarTabelaContatos();
 
 function salvarContato(event){ 
     //inibe a recarga da pagina
@@ -27,17 +35,43 @@ function salvarContato(event){
 
 function renderizarTabelaContatos(){
     if(contatos.length > 0 ){
-        let areaListagemContatos=document.getElementById('ListagemContatos');
+        let areaListagemContatos=document.getElementById('listagemContatos');
 
         /**
          * cria a tabela
          */
          let tabela= document.createElement('table');
 
+         let cabecalho=criarCabecalhoTabela();
+
+         //adiciona o cabecalho dentro da tabela
+         tabela.appendChild(cabecalho);
+
+         let corpoTabela=criarCorpoTabela();
+         //adiciona o corpo da tabela na tabela
+         tabela.appendChild(corpoTabela);
+
          /**
           * limpa a area de listagem
           */
          areaListagemContatos.innerHTML=''; //recebe uma string vazia
+
+         /**
+          * adiciona o cabeçalho dentro da tabela
+          */
+         tabela.appendChild(cabecalho);
+
+         /**
+          * adiciona a tabela dentro da area de listagem
+          */
+         areaListagemContatos.appendChild(tabela);
+
+
+
+    }
+}
+
+function criarCabecalhoTabela(){
 
          /**
           * cria o cabeçalho da tabela
@@ -66,17 +100,49 @@ function renderizarTabelaContatos(){
           */
          cabecalho.appendChild(linhaCabecalho);
 
+         //retorta o cabeçalho criado
+         return cabecalho;
+
+}
+
+function criarCorpoTabela(){
+    /**
+     * cria o corpo da tabela
+     */
+    let corpoTabela=document.createElement('tbody');
+
+    /**
+     * cria a linha de contatos
+     */
+
+     for(let i=0; i < contatos.length; i++){
          /**
-          * adiciona o cabeçalho dentro da tabela
+          * cria uma nova linha no corpo da tabela
           */
-         tabela.appendChild(cabecalho);
+         let linha= document.createElement('tr');
 
-         /**
-          * adiciona a tabela dentro da area de listagem
-          */
-         areaListagemContatos.appendChild(tabela);
+         let celulaNome=document.createElement('td');
+         celulaNome.innerText=contatos[i].nome;
+         linha.appendChild(celulaNome);
 
+         let celulaTelefone=document.createElement('td');
+         celulaTelefone.innerText=contatos[i].telefone;
+         linha.appendChild(celulaTelefone);
 
+         let celulaEmail=document.createElement('td');
+         celulaEmail.innerText=contatos[i].email;
+         linha.appendChild(celulaEmail);
 
-    }
+         let celulaDataNasc=document.createElement('td');
+         celulaDataNasc.innerText=contatos[i].dataNascimento;
+         linha.appendChild(celulaDataNasc);
+
+         //adiciona a nova linha no corpo da tabela
+            corpoTabela.appendChild(linha);
+         
+     }
+
+     return corpoTabela;
+
+     
 }
