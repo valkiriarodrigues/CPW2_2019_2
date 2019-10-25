@@ -4,10 +4,41 @@
 var contatos = [
     {
         nome: 'Valkiria',
-        telefone: '999999999',
+        telefone: '(67)99923-8987',
         email:'valkiria@hotmail.com',
         dataNascimento:'10/12/1994'
+    },
+    {
+        nome: 'Lucas Negri',
+        telefone: '(67)99857-4123',
+        email:'Lucas@hotmail.com',
+        dataNascimento:'11/12/1994'
+    },
+    {
+        nome: 'Talita',
+        telefone: '(67)99564-1287',
+        email:'Talita@hotmail.com',
+        dataNascimento:'08/10/1994'
+    },
+    {
+        nome: 'Claudia Rodrigues',
+        telefone: '(67)99564-1287',
+        email:'Claudiarod@hotmail.com',
+        dataNascimento:'08/10/1994'
+    },
+    {
+        nome: 'Christian Asaffe rodrigues barros',
+        telefone: '(67)99564-1287',
+        email:'asafferodrigues@hotmail.com',
+        dataNascimento:'08/10/1994'
+    },
+    {
+        nome: 'Antonio beltrao',
+        telefone: '(67)99564-1287',
+        email:'beltrao@hotmail.com',
+        dataNascimento:'08/10/1994'
     }
+    
 ];
 renderizarTabelaContatos();
 
