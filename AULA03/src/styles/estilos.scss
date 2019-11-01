@@ -82,7 +82,7 @@ body{
 
 }
 
-#listagemContatos{
+#tabelaContatos{
     margin-top: 20px;
     width: 95%;
 
@@ -134,3 +134,68 @@ body{
 
     }
 }
+//estilização dos cards
+#cardsContatos{
+    display: none; //ele desaparece 
+    padding: 5px 0px;
+    
+    //cada divi representa um card
+    div{
+        border: 1px solid $cor-header;
+        margin: 0px auto 10px auto;
+        width: 95%;
+        border-radius: 5px;
+        padding: 10px  7px 7px 7px;
+        box-shadow: 2px 2px $cor-header;
+        border: 1px solid $cor-botao-primario;
+
+
+        span{
+            font-family: $fonte-decorativa;
+            font-size: 80%;
+            display: block;
+            text-indent: 42px; 
+
+
+
+            //deixando a inicial e o restante do nome da mesma linha
+            &:first-child, &:nth-child(2){
+//Elementos com display inline não podem receber configuração de margem. 
+//Caso você precise aplicar margem em um elemento que possua exibição em linha (display inline), 
+//altere o valor da propriedade display para inline-block.
+                display: inline-block;
+                font-size: 100%;
+                margin-bottom: 5px;
+                text-indent: 0px;
+                margin-bottom: -5px;
+
+
+
+            }
+
+
+            //inicial do nome
+            &:first-child{
+                background-color: $cor-botao-primario;
+                padding: 8px 10px;
+                border-radius: 50%;
+                margin-right: 3px;
+                
+
+            }
+        }
+    }
+    
+}
+//no caso do celular, mostra os card e some com a tabela
+@media only screen and (max-width: 600px) {
+    #cardsContatos{
+        display: block;
+    }
+
+    #tabelaContatos{
+        display: none;
+    }
+}
+
+
