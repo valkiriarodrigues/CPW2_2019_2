@@ -42,6 +42,7 @@ body{
     /* ajuste a largura a seu gosto */
     width: 100%; 
     margin: auto; 
+    margin-top: 5px;
 
     label, input{
         display: block;
@@ -62,7 +63,7 @@ body{
                 width: 300px;
             }
             &[type=tel]{
-                width: 300px;
+                width: 250px;
             }
             &[type=email]{
                 width: 200px;
@@ -138,12 +139,13 @@ body{
 #cardsContatos{
     display: none; //ele desaparece 
     padding: 5px 0px;
+    margin-top: 10px;
     
     //cada divi representa um card
     div{
         border: 1px solid $cor-header;
         margin: 0px auto 10px auto;
-        width: 95%;
+        width: 90%;
         border-radius: 5px;
         padding: 10px  7px 7px 7px;
         box-shadow: 2px 2px $cor-header;
@@ -195,6 +197,16 @@ body{
 
     #tabelaContatos{
         display: none;
+    }
+
+    #formularioContato{
+
+        width: 88%;
+
+
+        input[type=text]{
+            width: 250px;
+        }
     }
 }
 

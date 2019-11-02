@@ -41,8 +41,8 @@ var contatos = [
     
 ];
 
-renderizarTabelaContatos();
-renderizarCardsContatos();
+renderizarTabelaContatos(contatos);
+renderizarCardsContatos(contatos);
 
 function salvarContato(event){ 
     //inibe a recarga da pagina
@@ -61,14 +61,16 @@ function salvarContato(event){
     contatos.push(contato);
 
     //invoca a renderização da tabela
-    renderizarTabelaContatos();
-    renderizarCardsContatos();
+    renderizarTabelaContatos(contatos);
+
+    //invoca a renderização dos cards
+    renderizarCardsContatos(contatos);
 
 
 }
 
-function renderizarTabelaContatos(){
-    if(contatos.length > 0 ){
+function renderizarTabelaContatos(listaContatos){
+    if(listaContatos.length > 0 ){
         let areaListagemContatos=document.getElementById('tabelaContatos');
 
         /**
@@ -81,7 +83,7 @@ function renderizarTabelaContatos(){
          //adiciona o cabecalho dentro da tabela
          tabela.appendChild(cabecalho);
 
-         let corpoTabela=criarCorpoTabela();
+         let corpoTabela=criarCorpoTabela(listaContatos);
          //adiciona o corpo da tabela na tabela
          tabela.appendChild(corpoTabela);
 
@@ -139,7 +141,7 @@ function criarCabecalhoTabela(){
 
 }
 
-function criarCorpoTabela(){
+function criarCorpoTabela(listaContatos){
     /**
      * cria o corpo da tabela
      */
@@ -149,26 +151,26 @@ function criarCorpoTabela(){
      * cria a linha de contatos
      */
 
-     for(let i=0; i < contatos.length; i++){
+     for(let i=0; i < listaContatos.length; i++){
          /**
           * cria uma nova linha no corpo da tabela
           */
          let linha= document.createElement('tr');
 
          let celulaNome=document.createElement('td');
-         celulaNome.innerText=contatos[i].nome;
+         celulaNome.innerText=listaContatos[i].nome;
          linha.appendChild(celulaNome);
 
          let celulaTelefone=document.createElement('td');
-         celulaTelefone.innerText=contatos[i].telefone;
+         celulaTelefone.innerText=listaContatos[i].telefone;
          linha.appendChild(celulaTelefone);
 
          let celulaEmail=document.createElement('td');
-         celulaEmail.innerText=contatos[i].email;
+         celulaEmail.innerText=listaContatos[i].email;
          linha.appendChild(celulaEmail);
 
          let celulaDataNasc=document.createElement('td');
-         celulaDataNasc.innerText=contatos[i].dataNascimento;
+         celulaDataNasc.innerText=listaContatos[i].dataNascimento;
          linha.appendChild(celulaDataNasc);
 
          //adiciona a nova linha no corpo da tabela
@@ -181,17 +183,20 @@ function criarCorpoTabela(){
      
 }
 
-function renderizarCardsContatos(){
+function renderizarCardsContatos(listaContatos){
     //se tiver algum contato 
-    if(contatos.length>0){
+    if(listaContatos.length>0){
         let areaListagemContatos = document.getElementById('cardsContatos');
+
+        //limpa a area e listagem
+        areaListagemContatos.innerHTML = '';
 
         /**
          * Ao invés de usar um loop, utilizaremos a funcao forEach
          * pega cada um dos contatos e joga na variável pela função anônima
          */
         //contatos.forEach(function(contato) {});
-        contatos.forEach(function (contato){
+        listaContatos.forEach(function (contato){
             let card = document.createElement('div');
             let inicialNome = document.createElement('span');
             //pega o caractere inicial da String
@@ -219,4 +224,26 @@ function renderizarCardsContatos(){
         });
     }
 }
+function filtrarContatos(){
+    //se tiver pelo menos um contato
+    if(contatos.length > 0){
+    let filtro= document.getElementById('filtro').value;
+    filtro = filtro.toLowerCase();
 
+    //filtra os contatos de acordo com o texto digitado pelo usuario no campo de filtro
+    
+        let contatosFiltrados = contatos.filter(function(contato){
+            let nome = contato.nome.toLowerCase(); // converter pra minisculo
+            let email = contato.email.toLowerCase();
+
+            //se o nome ou e-mail do contato conter o filtro do usuario retorno o contato
+            if(nome.includes(filtro) || email.includes(filtro)){
+                return contato;
+            }
+        });
+
+        renderizarCardsContatos(contatosFiltrados);
+        renderizarTabelaContatos(contatosFiltrados);
+
+}
+}
