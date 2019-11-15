@@ -189,6 +189,30 @@ body{
     }
     
 }
+
+
+
+#filtro{
+    margin: 30px auto 0px auto;
+    display: block;
+    border-radius: 20px;
+    width: 50%;
+    height: 35px;
+    border:1px solid #cccccc;
+    outline: none; // um quadrado azul  que apareceu, esta tirando ele de volta do campo de busca
+    text-indent: 20px; //afasta o texto da linha da borda
+    font-size: 90%;
+
+    &:hover{
+        border: none;
+        box-shadow: 1px 1px 5px #fdd0ab; 
+        
+
+    }
+    
+
+}
+
 //no caso do celular, mostra os card e some com a tabela
 @media only screen and (max-width: 600px) {
     #cardsContatos{
@@ -208,6 +232,10 @@ body{
             width: 250px;
         }
     }
+
+    #filtro{
+        width: 85%;
+    } 
 }
 
 
