@@ -1,45 +1,15 @@
 /**
  * nosso banco de dados fake(in memory DB)
  */
-var contatos = [
-    {
-        nome: 'Valkiria',
-        telefone: '(67)99923-8987',
-        email:'valkiria@hotmail.com',
-        dataNascimento:'10/12/1994'
-    },
-    {
-        nome: 'Lucas Negri',
-        telefone: '(67)99857-4123',
-        email:'Lucas@hotmail.com',
-        dataNascimento:'11/12/1994'
-    },
-    {
-        nome: 'Talita',
-        telefone: '(67)99564-1287',
-        email:'Talita@hotmail.com',
-        dataNascimento:'08/10/1994'
-    },
-    {
-        nome: 'Claudia Rodrigues',
-        telefone: '(67)99564-1287',
-        email:'Claudiarod@hotmail.com',
-        dataNascimento:'08/10/1994'
-    },
-    {
-        nome: 'Christian Asaffe rodrigues barros',
-        telefone: '(67)99564-1287',
-        email:'asafferodrigues@hotmail.com',
-        dataNascimento:'08/10/1994'
-    },
-    {
-        nome: 'Antonio beltrao',
-        telefone: '(67)99564-1287',
-        email:'beltrao@hotmail.com',
-        dataNascimento:'08/10/1994'
-    }
+
+ //cria o objeto sidney
+ let sidney = new Contato('Sidney Roberto','(67) 99999-9999', 'sidney@email.com','29/02/2003' );
+ let lucas = new Contato('Lucas Negri', '(67) 99898-9595', 'lucas@gmail.com', '54/85/1997' );
+ let valkiria = new Contato('Valkira Rodrigues', '(67) 98989-7856', 'valkiria@hotmail', '15/87/1996');
+
+var contatos = [sidney, lucas, valkiria];
+
     
-];
 
 renderizarTabelaContatos(contatos);
 renderizarCardsContatos(contatos);
