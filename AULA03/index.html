@@ -22,7 +22,7 @@
     </div> 
     
     <div id="formularioContato"> <!--atalho pra div #-->
-        <form onsubmit="salvarContato(event)"> <!--form todos os campos dentro do formulario-->
+        <form onsubmit="contatoView.salvarContato(event)"> <!--form todos os campos dentro do formulario-->
         <!--campo pro nome obrigatório usuario preencher-->
         <label for="nome">Nome</label> <!--label e enter cria a tag preencher o nome do usuario-->
         <input required id="nome" name="nome" type="text"> <!--input e enter valor da propriedade, quase sempre id e name é o mesmo nome dado, require obriga o usuario digitar a informação-->
@@ -45,13 +45,14 @@
 
     </div> 
 
-    <input onkeyup="filtrarContatos()" placeholder="Digite o nome ou e_mail" type="text" id="filtro">
+    <input onkeyup="contatoView.filtrarContatos()" placeholder="Digite o nome ou e_mail" type="text" id="filtro">
 
 
     <div id="cardsContatos"></div><!--Visualização mobile-->
     <div id="tabelaContatos"></div>
 
 <script src= "src/js/models/Contato.js"></script>
+<script src="src/js/views/ContatoView.js"></script>
 <script src="src/js/index.js"></script>
 <script src="src/js/mascaras.js"></script>
 
