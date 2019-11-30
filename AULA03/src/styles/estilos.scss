@@ -31,10 +31,6 @@ body{
 
 }
 
-
-
-
-
 #formularioContato{
 
     padding: 10px;
@@ -51,12 +47,12 @@ body{
     input{
         margin-bottom: 10px;
 
-            &[type=text], &[type=tell], &[type=email], &[type=sumit], &[type=date]{ /*& concatena o input com o input type-text.. esse & estiliza apenas o input que vc esta associando a ele*/
+            &[type=text], &[type=tel], &[type=email], &[type=sumit], &[type=date]{ /*& concatena o input com o input type-text.. esse & estiliza apenas o input que vc esta associando a ele*/
                 height:20;
                 font-size: 100%;
                 /*daqui pra baixo é opcional*/
                 border-radius: 5px;
-                border: 1px solid #aaa;
+                border: 1px solid rgb(197, 37, 37);
                 padding-left: 5px;
             }
             &[type=text]{

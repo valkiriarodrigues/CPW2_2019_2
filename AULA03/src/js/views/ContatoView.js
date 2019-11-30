@@ -1,8 +1,7 @@
-class ContatoView{
+class ContatoView{ // view faz os elementos aparecerem e desaparecerem da tela responsabilidade dela pegar os valores do formulario
 
-    constructor(contatos){
-        this.contatos = contatos;
-        this.contatosFiltrados = contatos;
+    constructor(contatos){ //this este objeto que vc acabou de criar(referencia ao objeto)
+        this.controller= new ContatoController(contatos); //istanciando um controlador 
         this.renderizarCardsContatos();
         this.renderizarTabelaContatos();
     }
@@ -21,18 +20,20 @@ class ContatoView{
         let contato = new Contato(nome, telefone, email, dataNascimento);
     
         //adiciona o contato no nosso banco de dados(no final do vetor)
-        this.contatos.push(contato);
+        this.controller.salvar(contato);
     
         //invoca a renderização da tabela
-        renderizarTabelaContatos();
+        this.renderizarTabelaContatos();
     
         //invoca a renderização dos cards
-        renderizarCardsContatos();
+        this.renderizarCardsContatos();
     
     
     }
     renderizarTabelaContatos(){
-        if(this.contatosFiltrados.length > 0 ){
+            let contatos = this.controller.recuperarTodos();
+
+        if(contatos.length > 0 ){
             let areaListagemContatos=document.getElementById('tabelaContatos');
     
             /**
@@ -45,7 +46,7 @@ class ContatoView{
              //adiciona o cabecalho dentro da tabela
              tabela.appendChild(cabecalho);
     
-             let corpoTabela=criarCorpoTabela();
+             let corpoTabela=this.criarCorpoTabela();
              //adiciona o corpo da tabela na tabela
              tabela.appendChild(corpoTabela);
     
@@ -108,31 +109,33 @@ class ContatoView{
          * cria o corpo da tabela
          */
         let corpoTabela=document.createElement('tbody');
+
+        let contatos = this.controller.recuperarTodos();
     
         /**
          * cria a linha de contatos
          */
     
-         for(let i=0; i < this.contatosFiltrados.length; i++){
+         for(let i=0; i < contatos.length; i++){
              /**
               * cria uma nova linha no corpo da tabela
               */
              let linha= document.createElement('tr');
     
              let celulaNome=document.createElement('td');
-             celulaNome.innerText=this.contatosFiltrados[i].nome;
+             celulaNome.innerText=contatos[i].nome;
              linha.appendChild(celulaNome);
     
              let celulaTelefone=document.createElement('td');
-             celulaTelefone.innerText=this.contatosFiltrados[i].telefone;
+             celulaTelefone.innerText=contatos[i].telefone;
              linha.appendChild(celulaTelefone);
     
              let celulaEmail=document.createElement('td');
-             celulaEmail.innerText=this.contatosFiltrados[i].email;
+             celulaEmail.innerText=contatos[i].email;
              linha.appendChild(celulaEmail);
     
              let celulaDataNasc=document.createElement('td');
-             celulaDataNasc.innerText=this.contatosFiltrados[i].dataNascimento;
+             celulaDataNasc.innerText=contatos[i].dataNascimento;
              linha.appendChild(celulaDataNasc);
     
              //adiciona a nova linha no corpo da tabela
@@ -147,7 +150,9 @@ class ContatoView{
 
 renderizarCardsContatos(){
     //se tiver algum contato 
-    if(this.contatosFiltrados.length>0){
+    let contatos = this.controller.recuperarTodos();
+
+    if(contatos.length>0){
         let areaListagemContatos = document.getElementById('cardsContatos');
 
         //limpa a area e listagem
@@ -158,7 +163,7 @@ renderizarCardsContatos(){
          * pega cada um dos contatos e joga na variável pela função anônima
          */
         //contatos.forEach(function(contato) {});
-        this.contatosFiltrados.forEach(function (contato){
+        contatos.forEach(function (contato){
             let card = document.createElement('div');
             let inicialNome = document.createElement('span');
             //pega o caractere inicial da String
@@ -188,26 +193,16 @@ renderizarCardsContatos(){
 }
 
 filtrarContatos(){
-    //se tiver pelo menos um contato
-    if(this.contatos.length > 0){
+    
     let filtro= document.getElementById('filtro').value;
     filtro = filtro.toLowerCase();
 
     //filtra os contatos de acordo com o texto digitado pelo usuario no campo de filtro
-    
-        this.contatosFiltrados = this.contatos.filter(function(contato){
-            let nome = contato.nome.toLowerCase(); // converter pra minisculo
-            let email = contato.email.toLowerCase();
+    this.controller.filtrar(filtro);
 
-            //se o nome ou e-mail do contato conter o filtro do usuario retorno o contato
-            if(nome.includes(filtro) || email.includes(filtro)){
-                return contato;
-            }
-        });
+        this.renderizarCardsContatos();
+        this.renderizarTabelaContatos();
 
-        renderizarCardsContatos();
-        renderizarTabelaContatos();
 
-}
 }
 }

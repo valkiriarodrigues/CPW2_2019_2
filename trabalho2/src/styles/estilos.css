@@ -1,0 +1,68 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "decorativa";
+  src: url(../fonts/IndieFlower-Regular.ttf);
+}
+@font-face {
+  font-family: "padrao";
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+body {
+  margin: 0;
+}
+
+#herder2 {
+  background-color: #f0ff00;
+  padding: 10px 20px;
+}
+#herder2 * {
+  display: inline;
+  vertical-align: middle;
+}
+#herder2 img {
+  width: 70px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+#herder2 h1 {
+  font-family: "decorativa";
+}
+
+#formularioItem {
+  border: 3px solid #f7ca18;
+  padding: 15px;
+}
+#formularioItem label, #formularioItem input {
+  display: block;
+  font-family: "padrao";
+}
+#formularioItem input {
+  margin-bottom: 10px;
+}
+#formularioItem input[type=submit] {
+  padding: 10px 20px;
+  height: inherit;
+  /*anula a altura padrão do botão*/
+  background-color: #f7ca18;
+  color: black;
+}
+#formularioItem input[type=number] {
+  width: 60px;
+}
+
+#herder3 {
+  background-color: #f0ff00;
+  font-family: "decorativa";
+  padding: 8px;
+}
+#herder3 * {
+  display: block;
+  vertical-align: middle;
+}
+#herder3 img {
+  width: 50px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+/*# sourceMappingURL=estilos.css.map */

@@ -45,13 +45,13 @@ body {
 #formularioContato input {
   margin-bottom: 10px;
 }
-#formularioContato input[type=text], #formularioContato input[type=tell], #formularioContato input[type=email], #formularioContato input[type=sumit], #formularioContato input[type=date] {
+#formularioContato input[type=text], #formularioContato input[type=tel], #formularioContato input[type=email], #formularioContato input[type=sumit], #formularioContato input[type=date] {
   /*& concatena o input com o input type-text.. esse & estiliza apenas o input que vc esta associando a ele*/
   height: 20;
   font-size: 100%;
   /*daqui pra baixo é opcional*/
   border-radius: 5px;
-  border: 1px solid #aaa;
+  border: 1px solid #c52525;
   padding-left: 5px;
 }
 #formularioContato input[type=text] {

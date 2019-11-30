@@ -1,0 +1,68 @@
+@import"cores";
+@import"fontes";
+
+body{
+    margin: 0;
+}
+
+#herder2{
+    background-color: $cor-herder2;
+    padding: 10px 20px;
+   
+
+    *{
+        display: inline;
+        vertical-align: middle;
+    }
+
+    img{
+        width: 70px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+
+    h1{
+        font-family: "decorativa";
+    
+    }
+
+
+}
+#formularioItem{
+    border: 3px solid $cor-margindoitem;
+    padding: 15px;
+    label, input{
+        display: block;
+        font-family: "padrao";
+    }
+    input{
+        margin-bottom: 10px;
+
+        &[type=submit]{
+            padding: 10px 20px;
+                height: inherit; /*anula a altura padrão do botão*/
+                background-color: $cor-botaoAdicionar;
+                color: black;
+        }
+        &[type=number]{
+            width: 60px;
+        }
+    }
+
+}
+
+#herder3{
+    background-color: $cor-herder2;
+    font-family: "decorativa";
+    padding: 8px;
+    *{
+        display: block;
+        vertical-align: middle;
+    }
+
+    img{
+        width: 50px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+}

@@ -14,8 +14,7 @@ var contatos = [sidney, lucas, valkiria, claudia, asaffe];
  //instancia o objeto da contato view
 
  var contatoView = new ContatoView(contatos);
-contatoView.renderizarTabelaContatos();
-contatoView.renderizarCardsContatos();
+
 
 
 
