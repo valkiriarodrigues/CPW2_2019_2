@@ -12,7 +12,7 @@ body {
 }
 
 #herder2 {
-  background-color: #f0ff00;
+  background-color: #ff8c00;
   padding: 10px 20px;
 }
 #herder2 * {
@@ -29,7 +29,7 @@ body {
 }
 
 #formularioItem {
-  border: 3px solid #f7ca18;
+  border: 3px solid #77610b;
   padding: 15px;
 }
 #formularioItem label, #formularioItem input {
@@ -43,11 +43,13 @@ body {
   padding: 10px 20px;
   height: inherit;
   /*anula a altura padrão do botão*/
-  background-color: #f7ca18;
+  background-color: #fce624;
   color: black;
 }
 #formularioItem input[type=number] {
   width: 60px;
+  display: inline;
+  font-family: "padrão";
 }
 
 #herder3 {

@@ -25,6 +25,7 @@ body{
         font-family: "decorativa";
     
     }
+    
 
 
 }
@@ -46,13 +47,18 @@ body{
         }
         &[type=number]{
             width: 60px;
+            display: inline;
+            font-family: "padrão";
         }
     }
+    
+
+
 
 }
 
 #herder3{
-    background-color: $cor-herder2;
+    background-color: $cor-minhaLista;
     font-family: "decorativa";
     padding: 8px;
     *{
@@ -66,3 +72,4 @@ body{
         margin-bottom: 10px;
     }
 }
+
