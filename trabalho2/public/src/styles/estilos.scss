@@ -39,7 +39,7 @@ body{
     input{
         margin-bottom: 10px;
 
-        &[type=submit]{
+        &[type=button]{
             padding: 10px 20px;
                 height: inherit; /*anula a altura padrão do botão*/
                 background-color: $cor-botaoAdicionar;
@@ -72,4 +72,27 @@ body{
         margin-bottom: 10px;
     }
 }
+//responsivo
+@media only screen and (max-width: 600px) { /*todos os celulares e alguns tablets*/
+    #herder2{
+        padding: 5px;
+        font-size: 80%;
+    
+    }
+    img{
+        width: 50px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
 
+    #herder3{
+        padding: 5px;
+        font-size: 80%;
+    
+    }
+    img{
+        margin-right: 5px;  
+    }
+  
+
+}

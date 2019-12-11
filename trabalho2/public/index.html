@@ -18,15 +18,13 @@
     </div>
 <!--a parte do item e do quadrado embaixo-->
     <div id="formularioItem">
-        <form onsubmit="adicionarItem(event)">
-           
-
+        <form >
                 <label for="item">Item</label>
                 <select onchange="colocarUnidade()" required id="item"></select> <!--fazer funcao no js onde usa esse valor pra aparecer na tela-->
                 <label for="quantidade">Quantidade</label>
                 <input type="number" name="quantidade" id="quantidade">
                 <span id="unidade"></span>
-                <input type="submit" value="Adicionar">
+                <input type="button" value="Adicionar" onclick="montarLista()">
 
         </form>
     </div>
@@ -36,12 +34,18 @@
         <img src="src/img/lista.png" alt="lista de compra">
         <h1>Minha Lista</h1> 
        <div id="aparecerItens"></div>
+       <input onkeyup="" placeholder="Digite a descrição do produto" type="text" id="filtro">
         
+    </div>
+<!--fazendo a lista aparecer de forma dinamica no js-->
+    <div id="=itens">
+        <ul id="listaItens">
+        </ul>
     </div>
 
     
  
-
+<!--importando a index.js-->
     <script src="src/js/index.js"></script>
 </body>
 </html>

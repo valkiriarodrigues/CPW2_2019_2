@@ -1,7 +1,5 @@
 
-var lista = [{descricao:'Abacaxi',quantidade: 3},
-{descricao:'Absorvente',quantidade: 4},
-{descricao:'Achocolatado em pó',quantidade: 5}];
+
 
 //colocando os itens para escolha
 var itens = [{descricao:'Abacaxi',unidade: 'un'},
@@ -106,24 +104,6 @@ var itens = [{descricao:'Abacaxi',unidade: 'un'},
 
 
 
-
-
-
-
-
-let aparecerItens = document.getElementById('aparecerItens');    
-for(let i = 0; i < lista.length; i++) {
-    let p = document.createElement('p');
-    p.innerText = lista[i].quantidade + ' UM de ' + lista[i].descricao;
-
-    aparecerItens.appendChild(p);
-}
-
-
-
-
-
-
 //selecionando os itens para compra
 
 function  selecionarItem(){
@@ -146,30 +126,16 @@ function colocarUnidade(){ //colocando o valor da unidade na tela
 
 }
 colocarUnidade();
+//selecionando o item e a quantidade
+function montarLista(){
+     let item= document.getElementById('item');
+     let qtda = document.getElementById('quantidade').value;
+     
+     
+     document.getElementById('listaItens').innerHTML += "<li> Quantidade: " + qtda  + "Item: "+ item.options[item.value].text +"</li>";
+     
+}
 
- function montarLista(){
-     let item= document.getElementById('item').value;//pegando o valor da tag
-     let aparecerItens=document.getElementById('aparecerItens');//pegou o id da div onde vai ser inseridas
-     let paragrafo=document.createElement('aparecerItens'); // criando paragrafo dinamicamente
-     paragrafo.innerText=item;// jogando o texto do input dentro do paragrafo qyue eu criei
-    aparecerItens.appendChild(paragrafo);//adicionando paragrafo dentro da div resposta
-
- }
-function montarLista() {
  
-/**
- *    let aparecerItens = document.getElementById('aparecerItens');
 
-    for(let i = 0; i < lista.length; i++) {
-        let p = document.createElement('p');
-        p.innerText = lista[i].quantidade + ' UM de ' + lista[i].descricao;
-
-        aparecerItens.appendChild(p);
-    }
-};
- */
-
-//criar a lista dentro de uma ul e depois dentro de uma li(todos os itens).. para a aprte da minha lista
-
-
-
+ 
